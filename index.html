@@ -123,7 +123,7 @@ section{padding:110px 0}
 .contact{border-top:1px solid var(--line)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
 .contact .q{font-weight:800;font-size:24px}
-.bigphone{display:block;font-weight:900;font-size:clamp(56px,8vw,104px);line-height:1;letter-spacing:-2px;margin:14px 0 22px;color:#fff;direction:ltr;text-align:right}
+.bigphone{display:block;font-weight:900;font-size:clamp(34px,13vw,104px);line-height:1;letter-spacing:-.02em;margin:14px 0 22px;color:#fff;direction:ltr;text-align:right;white-space:nowrap}
 .bigphone:hover{color:var(--bar)}
 .names{display:flex;align-items:center;gap:16px;opacity:.75;font-size:17px}
 .names::before,.names::after{content:"";flex:1;height:1px;background:var(--card);opacity:.5}
@@ -150,7 +150,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 36px}
 .foot nav{display:flex;gap:26px;opacity:.8}
 
 /* floating call */
-.fab{position:fixed;left:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--purple);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(110,89,168,.7)}
+.fab{position:fixed;left:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--purple);display:none;place-items:center;box-shadow:0 10px 30px -6px rgba(110,89,168,.7)}
 .fab svg{width:26px;height:26px;color:#fff}
 
 /* reveal */
@@ -185,6 +185,29 @@ footer{border-top:1px solid var(--line);padding:46px 0 36px}
   .grid{grid-template-columns:1fr;gap:22px}
   .card.wide{grid-column:auto;display:flex;flex-direction:column}
   .card.wide .plan{order:2;padding:0 20px 20px}
+  .card.wide .plan img{height:auto;max-height:420px;object-fit:contain;background:#f3eee7}
+  .sec-head{margin-bottom:30px}
+  .filters{width:100%;flex-wrap:nowrap}
+  .chip{flex:1;padding:10px 0;text-align:center}
+  .chip .lg{display:none}
+  .stat{padding:22px 0}
+  .stat b{font-size:36px}
+  .card .body{padding:24px 22px 20px}
+  .card p{font-size:18px}
+  .card .bar{padding:10px 22px 10px 10px;min-height:62px}
+  .card.wide .bar{padding-left:10px}
+  .price{font-size:27px}
+  .person b{font-size:20px}
+  .person .info{padding:14px 16px 16px}
+  .contact .q{font-size:20px;line-height:1.3}
+  .seg label{font-size:15px;padding:12px 4px;white-space:nowrap}
+  .mail{font-size:17px}
+  .mail a{display:inline-block;margin-top:4px}
+  .names{font-size:15px;gap:10px}
+  footer{padding-bottom:100px}
+  .foot{flex-direction:column;align-items:flex-start;gap:20px}
+  .foot nav{gap:20px;flex-wrap:wrap}
+  .fab{display:grid;width:54px;height:54px;left:16px;bottom:16px}
   .card.wide .bar{order:3}
   .card h3{font-size:27px}
   .svc-grid{grid-template-columns:1fr}
@@ -249,7 +272,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 36px}
     <div class="stats">
       <div class="stat"><b>A · B1 · B2</b><span>כל מרכזי העיר תחת קורת גג אחת</span></div>
       <div class="stat"><b>1:1</b><span>ליווי אישי מהפגישה הראשונה ועד החתימה</span></div>
-      <div class="stat"><b class="ltr">0₪</b><span>שיחת ייעוץ והתאמה ראשונית</span></div>
+      <div class="stat"><b>חינם</b><span>שיחת ייעוץ והתאמה ראשונית</span></div>
     </div>
   </div>
 </section>
@@ -261,9 +284,9 @@ footer{border-top:1px solid var(--line);padding:46px 0 36px}
       <h2>נכסים למכירה</h2>
       <div class="filters" role="group" aria-label="סינון לפי מרכז">
         <button class="chip on" data-f="all">הכל</button>
-        <button class="chip" data-f="A">מרכז A</button>
-        <button class="chip" data-f="B1">מרכז B1</button>
-        <button class="chip" data-f="B2">מרכז B2</button>
+        <button class="chip" data-f="A"><span class="lg">מרכז </span>A</button>
+        <button class="chip" data-f="B1"><span class="lg">מרכז </span>B1</button>
+        <button class="chip" data-f="B2"><span class="lg">מרכז </span>B2</button>
       </div>
     </div>
 
@@ -373,8 +396,8 @@ footer{border-top:1px solid var(--line);padding:46px 0 36px}
     <form id="lead" class="rv" novalidate>
       <h3>נחזור אליכם</h3>
       <div class="seg">
-        <input type="radio" name="kind" id="k1" value="קונה" checked><label for="k1">אני מחפש לקנות</label>
-        <input type="radio" name="kind" id="k2" value="מוכר"><label for="k2">אני רוצה למכור</label>
+        <input type="radio" name="kind" id="k1" value="קונה" checked><label for="k1">מחפש לקנות</label>
+        <input type="radio" name="kind" id="k2" value="מוכר"><label for="k2">רוצה למכור</label>
       </div>
       <div class="row">
         <label>שם מלא<input name="name" required autocomplete="name"></label>
