@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>גבעות | תיווך נדל"ן ביתר עילית</title>
+<meta name="description" content="גבעות – משרד תיווך נדל&quot;ן בביתר עילית. דירות למכירה במרכז A, B1, B2, ייעוץ והתאמה למוכרים וקונים. 02-3766-267">
+<link rel="icon" href="assets/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#141323;        /* רקע המותג */
+  --navy-2:#1d1c30;
+  --card:#e9e8f3;        /* רקע כרטיס */
+  --bar:#acaad2;         /* פס מחיר */
+  --purple:#6e59a8;      /* סגול הלוגו */
+  --purple-d:#574590;
+  --ink:#141323;
+  --ink-soft:#3b3a4f;
+  --tag:#3e3d4d;
+  --line:rgba(233,232,243,.18);
+  --radius:6px;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Heebo",system-ui,sans-serif;background:var(--navy);color:var(--card);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.ltr{direction:ltr;unicode-bidi:embed;display:inline-block}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(20,19,35,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.brand img{height:54px;width:auto}
+.nav ul{display:flex;gap:34px;list-style:none;font-weight:500;font-size:17px}
+.nav ul a{opacity:.85;transition:.2s}
+.nav ul a:hover{opacity:1;color:var(--bar)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:inherit;font-weight:800;font-size:17px;border:0;cursor:pointer;border-radius:var(--radius);padding:13px 24px;transition:.2s}
+.btn-purple{background:var(--purple);color:#fff}
+.btn-purple:hover{background:var(--purple-d)}
+.btn-ghost{background:transparent;color:var(--card);border:1.5px solid var(--bar)}
+.btn-ghost:hover{background:var(--bar);color:var(--ink)}
+.btn svg{width:18px;height:18px}
+.menu-btn{display:none;background:none;border:0;color:var(--card);cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:110px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:500;color:var(--bar);font-size:17px;margin-bottom:22px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--purple)}
+.hero h1{font-weight:900;font-size:clamp(46px,6.6vw,88px);line-height:.98;letter-spacing:-1.5px}
+.hero h1 span{color:var(--bar)}
+.hero p.lead{font-size:21px;font-weight:300;max-width:520px;margin:26px 0 38px;opacity:.9}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-mark{justify-self:center;width:100%;max-width:400px;aspect-ratio:1/1;position:relative}
+.hero-mark svg{width:100%;height:100%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;border-top:1px solid var(--line)}
+.stat{padding:30px 0 34px}
+.stat + .stat{border-right:1px solid var(--line);padding-right:34px}
+.stat b{display:block;font-size:44px;font-weight:900;line-height:1;color:#fff}
+.stat span{opacity:.75;font-size:16px}
+
+/* ---------- section heads ---------- */
+section{padding:110px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head h2{font-weight:900;font-size:clamp(36px,4.5vw,56px);line-height:1;letter-spacing:-1px}
+.sec-head p{opacity:.75;max-width:420px;font-size:18px;font-weight:300}
+
+/* ---------- listings ---------- */
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font-family:inherit;font-weight:700;font-size:16px;padding:9px 20px;border-radius:var(--radius);border:1.5px solid var(--line);background:transparent;color:var(--card);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--bar)}
+.chip.on{background:var(--card);color:var(--ink);border-color:var(--card)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.card{background:var(--card);color:var(--ink);border-radius:var(--radius);display:flex;flex-direction:column;overflow:hidden;transition:transform .25s, box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px -12px rgba(0,0,0,.6)}
+.card .body{padding:30px 30px 26px;flex:1}
+.card h3{font-weight:900;font-size:30px;line-height:1.05;margin-bottom:22px;letter-spacing:-.3px}
+.card p{font-size:19px;line-height:1.38;font-weight:400;color:var(--ink-soft)}
+.card p strong{color:var(--ink);font-weight:800}
+.card .bar{background:var(--bar);display:flex;align-items:center;justify-content:space-between;padding:12px 30px 12px 12px;min-height:70px}
+.price{font-weight:900;font-size:30px;letter-spacing:-.3px;display:flex;align-items:baseline;gap:8px}
+.price small{font-size:16px;font-weight:400}
+.tag{background:var(--ink);color:#fff;font-weight:700;font-size:17px;min-width:52px;height:42px;display:grid;place-items:center;border-radius:3px;padding:0 10px}
+.tag.B2{background:var(--purple)}
+.tag.A{background:var(--tag)}
+.card.wide{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto}
+.card.wide .body{grid-column:1}
+.card.wide .plan{grid-column:2;grid-row:1 / span 2;padding:20px 20px 20px 20px;background:var(--card)}
+.card.wide .plan img{width:100%;height:100%;object-fit:cover;border:6px solid var(--bar);border-radius:2px}
+.card.wide .bar{grid-column:1;padding-left:30px}
+.card.hide{display:none}
+.list-note{margin-top:34px;opacity:.7;font-size:16px}
+
+/* ---------- services ---------- */
+.services{background:var(--navy-2)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.svc{padding:40px 30px 10px 30px}
+.svc:first-child{padding-right:0}
+.svc + .svc{border-right:1px solid var(--line)}
+.svc .num{font-weight:900;color:var(--purple);font-size:18px;margin-bottom:22px}
+.svc h3{font-size:26px;font-weight:800;line-height:1.1;margin-bottom:14px}
+.svc p{opacity:.75;font-weight:300;font-size:17px}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about h2{font-weight:900;font-size:clamp(36px,4.5vw,56px);line-height:1.02;letter-spacing:-1px;margin-bottom:26px}
+.about p{font-size:19px;font-weight:300;opacity:.88;margin-bottom:18px}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.person{background:var(--card);color:var(--ink);border-radius:var(--radius);overflow:hidden}
+.person .ph{aspect-ratio:4/5;background:var(--bar);display:grid;place-items:center;position:relative;overflow:hidden}
+.person .ph span{font-weight:900;font-size:84px;color:var(--purple);opacity:.9}
+.person .ph svg{position:absolute;bottom:0;left:0;width:100%;opacity:.35}
+.person .info{padding:18px 22px 22px}
+.person b{font-size:24px;font-weight:900;display:block;line-height:1.1}
+.person small{font-size:16px;color:var(--ink-soft)}
+
+/* ---------- contact ---------- */
+.contact{border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.contact .q{font-weight:800;font-size:24px}
+.bigphone{display:block;font-weight:900;font-size:clamp(56px,8vw,104px);line-height:1;letter-spacing:-2px;margin:14px 0 22px;color:#fff;direction:ltr;text-align:right}
+.bigphone:hover{color:var(--bar)}
+.names{display:flex;align-items:center;gap:16px;opacity:.75;font-size:17px}
+.names::before,.names::after{content:"";flex:1;height:1px;background:var(--card);opacity:.5}
+.mail{margin-top:16px;font-size:19px;opacity:.85}
+.mail a{border-bottom:1px solid var(--bar)}
+form{background:var(--card);color:var(--ink);border-radius:var(--radius);padding:36px;display:grid;gap:16px}
+form h3{font-weight:900;font-size:30px;line-height:1}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-weight:700;font-size:15px}
+input,select,textarea{font-family:inherit;font-size:17px;padding:13px 14px;border:1.5px solid var(--bar);background:#fff;border-radius:4px;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--purple);outline-offset:1px;border-color:var(--purple)}
+textarea{min-height:100px;resize:vertical}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--bar);border-radius:4px;overflow:hidden}
+.seg input{display:none}
+.seg label{display:block;text-align:center;padding:12px;cursor:pointer;font-size:17px;background:#fff;transition:.15s}
+.seg input:checked + label{background:var(--ink);color:#fff}
+.form-ok{display:none;font-weight:700;color:var(--purple-d)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:46px 0 36px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.foot img{height:70px;width:auto}
+.foot small{opacity:.55;font-size:14px}
+.foot nav{display:flex;gap:26px;opacity:.8}
+
+/* floating call */
+.fab{position:fixed;left:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--purple);display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(110,89,168,.7)}
+.fab svg{width:26px;height:26px;color:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .card.wide{grid-column:span 2}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc:nth-child(3){border-right:0;padding-right:0}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:50px}
+  .hero-mark{max-width:260px;justify-self:start}
+  .team{max-width:520px}
+  .person .ph{aspect-ratio:1/1}
+}
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .nav{height:66px}
+  .brand img{height:44px}
+  .nav ul{display:none;position:absolute;top:66px;right:0;left:0;flex-direction:column;gap:0;background:var(--navy);border-bottom:1px solid var(--line)}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:16px 20px;border-top:1px solid var(--line)}
+  .nav .btn{display:none}
+  .menu-btn{display:block}
+  .hero{padding-top:60px}
+  .hero-mark{display:none}
+  .stats{grid-template-columns:1fr;margin-top:56px}
+  .stat + .stat{border-right:0;border-top:1px solid var(--line);padding-right:0}
+  section{padding:76px 0}
+  .grid{grid-template-columns:1fr;gap:22px}
+  .card.wide{grid-column:auto;display:flex;flex-direction:column}
+  .card.wide .plan{order:2;padding:0 20px 20px}
+  .card.wide .bar{order:3}
+  .card h3{font-size:27px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc,.svc:first-child{padding:30px 0 6px}
+  .svc + .svc{border-right:0;border-top:1px solid var(--line)}
+  .team{grid-template-columns:1fr 1fr;gap:14px}
+  .person .ph span{font-size:60px}
+  form{padding:24px}
+  form .row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="גבעות – דף הבית"><img src="assets/logo-crop.png" alt="גבעות תיווך נדל&quot;ן ביתר עילית"></a>
+    <ul id="menu">
+      <li><a href="#listings">נכסים</a></li>
+      <li><a href="#services">שירותים</a></li>
+      <li><a href="#about">אודות</a></li>
+      <li><a href="#contact">צור קשר</a></li>
+    </ul>
+    <a href="tel:023766267" class="btn btn-purple">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="ltr">02-3766-267</span>
+    </a>
+    <button class="menu-btn" aria-label="תפריט" onclick="document.getElementById('menu').classList.toggle('open')">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">תיווך נדל"ן | ביתר עילית</div>
+        <h1>הבית הבא שלכם<br><span>מחכה בגבעות.</span></h1>
+        <p class="lead">מכירה, קנייה והתאמה מדויקת של דירות בביתר עילית. היכרות אישית עם כל שכונה, כל בניין וכל נוף – כדי שתגיעו לעסקה הנכונה.</p>
+        <div class="hero-cta">
+          <a href="#listings" class="btn btn-purple">לנכסים שלנו</a>
+          <a href="#contact" class="btn btn-ghost">ייעוץ והתאמה ללא עלות</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <defs><clipPath id="sq"><rect width="400" height="400"/></clipPath></defs>
+          <g clip-path="url(#sq)">
+            <rect width="400" height="400" fill="#6e59a8"/>
+            <path d="M0 150 C 110 40, 230 60, 400 120 L400 400 L0 400Z" fill="#141323"/>
+            <path d="M0 185 C 110 80, 230 100, 400 160 L400 400 L0 400Z" fill="#e9e8f3"/>
+            <path d="M0 290 C 120 200, 240 210, 400 265 L400 400 L0 400Z" fill="#141323"/>
+            <path d="M0 325 C 120 240, 240 250, 400 305 L400 400 L0 400Z" fill="#e9e8f3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>A · B1 · B2</b><span>כל מרכזי העיר תחת קורת גג אחת</span></div>
+      <div class="stat"><b>1:1</b><span>ליווי אישי מהפגישה הראשונה ועד החתימה</span></div>
+      <div class="stat"><b class="ltr">0₪</b><span>שיחת ייעוץ והתאמה ראשונית</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section id="listings">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>נכסים למכירה</h2>
+      <div class="filters" role="group" aria-label="סינון לפי מרכז">
+        <button class="chip on" data-f="all">הכל</button>
+        <button class="chip" data-f="A">מרכז A</button>
+        <button class="chip" data-f="B1">מרכז B1</button>
+        <button class="chip" data-f="B2">מרכז B2</button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid">
+      <article class="card rv" data-a="B2">
+        <div class="body"><h3>במרכז B2<br>כולל אופציה</h3>
+        <p>4 חדרים, 110 מ"ר, קומה נוחה + אופציה של כ-110 מ"ר עם היתר ביד, נוף מטורף, מיקום מרכזי ומבוקש</p></div>
+        <div class="bar"><span class="price">מחיר מעולה</span><span class="tag B2">B2</span></div>
+      </article>
+
+      <article class="card rv" data-a="B2">
+        <div class="body"><h3>הרב שך<br>חדשה בשוק</h3>
+        <p>5 חדרים מרווחת, כ-150 מ"ר, מרפסת כ-50 מ"ר, נוף נדיר ומהמם, משופצת, אופציה לחלוקה מיידית בקלות</p></div>
+        <div class="bar"><span class="price">מחיר מעולה</span><span class="tag B2">B2</span></div>
+      </article>
+
+      <article class="card rv" data-a="B1">
+        <div class="body"><h3>4 חדרים<br>במרכז B</h3>
+        <p>4 חדרים מרווחת, כ-120 מ"ר, מרפסת כ-15 מ"ר, קומה אחת לעלות, פונה לחזית, משופצת ברמה, מיקום מרכזי ומבוקש</p></div>
+        <div class="bar"><span class="price">3,190,000 <small>גמיש</small></span><span class="tag">B1</span></div>
+      </article>
+
+      <article class="card rv" data-a="B1">
+        <div class="body"><h3>פחד יצחק<br>כולל יח"ד</h3>
+        <p>4 חדרים מרווחת, כ-130 מ"ר, מרפסת גדולה, פונה לחזית, קומה נוחה, מיקום מרכזי ומבוקש, יח"ד כ-55 מ"ר מושכרת</p></div>
+        <div class="bar"><span class="price">3,950,000 <small>גמיש</small></span><span class="tag">B1</span></div>
+      </article>
+
+      <article class="card rv" data-a="B1">
+        <div class="body"><h3>טאבו משותף<br>בבניין דוד<br>חדשה בשוק</h3>
+        <p>5 חדרים, 120 מ"ר, קומה נוחה, פונה לכיוון הנוף, הון עצמי דרוש מיליון ש"ח</p></div>
+        <div class="bar"><span class="price">מחיר מעולה</span><span class="tag">B1</span></div>
+      </article>
+
+      <article class="card rv" data-a="A">
+        <div class="body"><h3>טאבו משותף<br>בנדבורנה + יח"ד<br>+ אופציה</h3>
+        <p>4 חדרים, כ-120 מ"ר, מתוחזקת היטב, פונה לחזית, 3 כיווני אוויר, יח"ד מושכרת, אופציה 50 מ"ר, שותף יחיד ללא משכנתא, <strong>הון עצמי נמוך</strong></p></div>
+        <div class="bar"><span class="price">3,290,000 <small>גמיש</small></span><span class="tag A">A</span></div>
+      </article>
+
+      <article class="card wide rv" data-a="A">
+        <div class="body"><h3>טאבו משותף<br>בשכונת הדקל<br>בבלעדיות</h3>
+        <p>4 חדרים, כ-85 מ"ר, מתוכננת היטב, קומה נוחה, בבניה, חזית ונוף, הון עצמי דרוש 800 אל"ש</p></div>
+        <div class="plan"><img src="assets/floorplan.jpg" alt="תוכנית הדירה בשכונת הדקל" loading="lazy"></div>
+        <div class="bar"><span class="price">1,490,000 <small>גמיש</small></span><span class="tag A">A</span></div>
+      </article>
+
+      <article class="card rv" data-a="A">
+        <div class="body"><h3>טאבו משותף<br>בשכונת הדקל<br>חדשה בשוק</h3>
+        <p>5 חדרים, 120 מ"ר, קומה 2, יחידת הורים, חדר ממ"ד, נוף מדהים, הון עצמי דרוש 850 אל"ש בלבד</p></div>
+        <div class="bar"><span class="price">2,190,000</span><span class="tag A">A</span></div>
+      </article>
+    </div>
+    <p class="list-note rv">מחפשים משהו שלא מופיע כאן? חלק מהנכסים שלנו לא מפורסמים – <a href="#contact" style="border-bottom:1px solid var(--bar)">ספרו לנו מה אתם מחפשים</a>.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>מוכרים או קונים?</h2>
+      <p>אנחנו מכירים את ביתר עילית מבפנים – ויודעים לחבר בין הנכס הנכון לאנשים הנכונים.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv"><div class="num">01</div><h3>מכירת הנכס שלכם</h3><p>תמחור נכון, חשיפה לקהל קונים רלוונטי ומשא ומתן שמביא את המחיר הטוב ביותר.</p></div>
+      <div class="svc rv"><div class="num">02</div><h3>איתור דירה לקונים</h3><p>מבינים מה אתם צריכים – חדרים, מרכז, הון עצמי – ומביאים רק נכסים שמתאימים.</p></div>
+      <div class="svc rv"><div class="num">03</div><h3>טאבו משותף ואופציות</h3><p>הסבר ברור על עסקאות טאבו משותף, יחידות דיור ואופציות בנייה – בלי הפתעות.</p></div>
+      <div class="svc rv"><div class="num">04</div><h3>ליווי עד החתימה</h3><p>תיאום מול עורכי דין, שמאים ויועצי משכנתאות, עד שהמפתח בידיים שלכם.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <div class="eyebrow">מי אנחנו</div>
+      <h2>גבעות.<br>תיווך מקומי, יחס אישי.</h2>
+      <p>משרד גבעות מתמחה בנדל"ן בביתר עילית – בכל המרכזים והשכונות. אנחנו מכירים את הבניינים, את הנופים ואת האנשים, וזה מה שמאפשר לנו להתאים לכל לקוח בדיוק את מה שהוא מחפש.</p>
+      <p>בין אם אתם מוכרים דירה ורוצים לקבל את המחיר הנכון, ובין אם אתם מחפשים בית ראשון או גדול יותר – נשמח לשבת איתכם.</p>
+    </div>
+    <div class="team rv">
+      <div class="person">
+        <div class="ph"><span>י"ג</span>
+          <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 30 C 60 0, 130 10, 200 25 L200 60 L0 60Z" fill="#141323"/></svg></div>
+        <div class="info"><b>יענקי גוטליב</b><small>יועץ נדל"ן</small></div>
+      </div>
+      <div class="person">
+        <div class="ph"><span>ח"ב</span>
+          <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 30 C 60 0, 130 10, 200 25 L200 60 L0 60Z" fill="#141323"/></svg></div>
+        <div class="info"><b>חיים ביניק</b><small>יועץ נדל"ן</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <div class="q">מוכרים או קונים? חייגו עכשיו לייעוץ והתאמה</div>
+      <a class="bigphone" href="tel:023766267">02-3766-267</a>
+      <div class="names">יענקי גוטליב | חיים ביניק</div>
+      <div class="mail">דואר אלקטרוני: <a href="mailto:A0527633130@gmail.com" class="ltr">A0527633130@gmail.com</a></div>
+    </div>
+    <form id="lead" class="rv" novalidate>
+      <h3>נחזור אליכם</h3>
+      <div class="seg">
+        <input type="radio" name="kind" id="k1" value="קונה" checked><label for="k1">אני מחפש לקנות</label>
+        <input type="radio" name="kind" id="k2" value="מוכר"><label for="k2">אני רוצה למכור</label>
+      </div>
+      <div class="row">
+        <label>שם מלא<input name="name" required autocomplete="name"></label>
+        <label>טלפון<input name="phone" type="tel" required autocomplete="tel" dir="ltr" style="text-align:right"></label>
+      </div>
+      <div class="row">
+        <label>מרכז מועדף<select name="area"><option>לא משנה</option><option>מרכז A</option><option>מרכז B1</option><option>מרכז B2</option></select></label>
+        <label>מספר חדרים<select name="rooms"><option>לא משנה</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></label>
+      </div>
+      <label>הודעה<textarea name="msg" placeholder="ספרו לנו בקצרה מה אתם מחפשים..."></textarea></label>
+      <button class="btn btn-purple" type="submit" style="justify-content:center">שליחה</button>
+      <div class="form-ok" id="ok">תודה! פותחים את המייל לשליחה – נחזור אליכם בהקדם.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="assets/logo-crop.png" alt="גבעות תיווך נדל&quot;ן ביתר עילית">
+    <nav><a href="#listings">נכסים</a><a href="#services">שירותים</a><a href="#about">אודות</a><a href="#contact">צור קשר</a></nav>
+    <small>© <span id="y"></span> גבעות תיווך נדל"ן. כל הזכויות שמורות. התמונות להמחשה בלבד.</small>
+  </div>
+</footer>
+
+<a class="fab" href="tel:023766267" aria-label="חייגו אלינו">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+</a>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// close mobile menu on click
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+// filters
+const chips=document.querySelectorAll('.chip'), cards=document.querySelectorAll('#grid .card');
+chips.forEach(c=>c.addEventListener('click',()=>{
+  chips.forEach(x=>x.classList.remove('on')); c.classList.add('on');
+  const f=c.dataset.f;
+  cards.forEach(k=>k.classList.toggle('hide', f!=='all' && k.dataset.a!==f));
+}));
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// lead form -> mailto
+document.getElementById('lead').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target, d=new FormData(f);
+  if(!d.get('name')||!d.get('phone')){ (d.get('name')?f.phone:f.name).focus(); return; }
+  const body=`סוג פנייה: ${d.get('kind')}\nשם: ${d.get('name')}\nטלפון: ${d.get('phone')}\nמרכז: ${d.get('area')}\nחדרים: ${d.get('rooms')}\n\n${d.get('msg')||''}`;
+  location.href='mailto:A0527633130@gmail.com?subject='+encodeURIComponent('פנייה מהאתר – '+d.get('kind'))+'&body='+encodeURIComponent(body);
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
